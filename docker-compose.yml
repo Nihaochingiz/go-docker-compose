@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      target: dev
+    command: air
+    command: go run main.go
+    volumes:
+      - ./:/app
+    ports:
+      - '8080:8080'
